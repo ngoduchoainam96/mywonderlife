@@ -21,7 +21,14 @@ Route::get('/{path}', function () {
     return view('welcome');
 });
 
+Route::get('/userdetail/{path}', function () {
+    return view('welcome');
+});
+
 Route::resource('items', 'ItemController');
+
+Route::get('/redirect/{social}', 'App\Http\Controllers\SocialAuthController@redirect');
+Route::get('/callback/{social}', 'App\Http\Controllers\SocialAuthController@callback');
 
 
 
